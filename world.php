@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] === "GET"){
         }else{
             echo "No Such Country";
         }
-    }else{
+    }else if (isset($_GET['all']) && !empty($_GET['all']) && $_GET['all'] == "true"){
         $stmt = $conn->query("SELECT * FROM countries");
 
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
