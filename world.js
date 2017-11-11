@@ -8,9 +8,9 @@ function ajax_request(country){
     requestObject.onreadystatechange=function(){
         if(this.readyState == XMLHttpRequest.DONE){
             if(this.status == 200){
-                alert(this.responseText);
+                $("#result")[0].innerHTML = "<p>"+this.responseText+"<\p>";
             }else{
-                alert("Inernal Error");
+                $("#result")[0].innerHTML = "Inernal Error";
             }
         }
     }
